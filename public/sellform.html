@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" >
+     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABXrzOdYntmVFt7vHZPMHEtAnvZLr7N-s&libraries=places"
+        ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <style type="">
+        
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background-image: url("http://jacobswellappeal.org/wp-content/uploads/2014/11/donate-medicines.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+   </style>
+       <script type="text/javascript">
+    
+  function getLocation()
+  {
+     navigator.geolocation.getCurrentPosition(function(position){
+     var location = document.getElementById("latitude");
+     location.setAttribute('value', position.coords.latitude);
+     var longi = document.getElementById("longitude");
+     longi.setAttribute("value", position.coords.longitude);
+     });
+   }
+   </script>
+   </head>
+   <body onload="getLocation()">
+   
+
+   <div class="ui fixed inverted menu">
+            <div class="ui container">
+                 <div class="header item"><a href="/"><i class="certificate icon"></i>Expiry</a></div>
+               </div>
+               </div>
+              
+            <!-- <div class="ui container" style="width: 30%; align-self: center; ">
+               <div class ="ui huge header">Need Labourers?</div>
+                <form class= "ui fluid form"  action="/labor" method="POST">-->
+
+             <div  class="ui main segment container" style="margin-top: 100px; width: 30%; align-self: center; color: white; background-color: black ">
+               <div class ="ui huge header" style="color: white"></div>
+                <form class="ui fluid form" action="/sellform" method="POST">
+                 <div class="form-group">
+              <label for="medicine"  class="col-sm-3 control-label">Medicine:</label>
+              <div class="col-sm-9 ">
+                <input type="text" placeholder="Enter medicine" name="medicine">
+              </div>
+    </div>
+    <div class="form-group">
+        <label for="noOfTablets"  class="col-sm-3 control-label">No of tablets:</label>
+        <div class="col-sm-9 ">
+          <input type="text" placeholder="Enter no of tablets" name="noOfTablets">
+        </div>
+</div>
+   
+                <label class="field">
+                Latitude: <input id="latitude" type="text" name="latitude" value="">
+                </label>
+                <label class="field">
+                 Longitude: <input id="longitude" type="text" name="longitude" value="">
+
+                </label>
+            
+
+                <button class="ui green inverted button" style="align-content: center" type="Submit">Submit</button>
+              </form>
+            </div>
+</body>
+</html>

@@ -11,7 +11,8 @@ var itemSchema= new mongoose.Schema({
          type:mongoose.Schema.Types.ObjectId,
          ref:"User"
       },
-      username: String
+      username: String,
+      unique: false
    }
 });
 module.exports= mongoose.model("Item",itemSchema);
