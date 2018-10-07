@@ -1,0 +1,22 @@
+{
+  "name": "expiry",
+  "version": "1.0.0",
+  "description": "An in-person visit to a nearby sub-urban farming area in Delhi brought to foreground the following problems of a humble, mundane framer: \r - Laborer deficit (hard to find laborers) \r - Foul agricultural malpractices of fellow-farmers that need reporting \r - Crop yield uncertainty\r - Price disparity on both buying(of seeds) and selling(of crops) ends \r - Lack of awareness of new developments in agriculture\r - Price disparity on both buying(of seeds) and selling(of crops) ends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "moment": "^2.22.2",
+    "mongoose": "^5.3.1",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-local-mongoose": "^5.0.1"
+  }
+}
