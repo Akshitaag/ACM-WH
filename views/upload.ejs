@@ -1,0 +1,31 @@
+<% include partials/header%>
+
+<div style="width: 300px; " class= "ui main container segment">
+   <div class ="ui huge header">Admission Classifier</div>
+<form class= "ui fluid form"  ref='uploadForm' 
+  id='uploadForm' 
+  action='http://localhost:3000/upload' 
+  method='post' 
+  encType="multipart/form-data">
+  
+
+ <div class="field">
+  <label>
+      Please upload your prescription:
+      <input  type="file" name="sampleFile" required="" /><br>
+  </label>
+  
+     </div>
+     <label class="field">
+       Medicine: <input id="medicine" type="text" name="medicine" value="<%=medi%>">
+
+       </label>
+   
+ <div class="field">
+    <input style="color: gray; align-self: center" type='submit' class="ui black inverted button" value='Upload!' /><br>
+</div>
+</form>
+</div>     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<% include partials/footer%>

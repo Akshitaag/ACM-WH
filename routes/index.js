@@ -4,6 +4,10 @@ var router  = express.Router();
 var User=require("../models/user.js");
 var passport=require("passport");
 var Item=require("../models/item.js");
+fileUpload = require('express-fileupload');
+var PythonShell = require('python-shell'),
+sys = require('sys');
+app.use(fileUpload());
 
 
 //AUTH ROUTES
@@ -146,18 +150,60 @@ router.get("/:id/buy",function(req,res){
             console.log(err);
             else {
             //console.log(docs);
+            byCost  = docs;
             Item.find({name : req.body.medicine}).sort({expiryDate : 'ascending'}).exec(function(err, docs){
                 if(err)
                 console.log(err);
                 else {
                 console.log(docs);
-    
+                    byDate = docs;
+                    res.render("sorted", {byCost : byCost, byDate:byDate});
                 }        
-            })
+            });
             }        
-        })
+        });
     });
+router.get("/:sid/:iid/:medi/upload", function(req, res){
+    res.render("upload", {medi : medi})
+});
+router.post('/upload', function(req, res) {
+    if (!req.files)
+      return res.status(400).send('No files were uploaded.');
+    console.log('body'+req.body);
+    let sampleFile = req.files.sampleFile;
+    var filename = req.files.sampleFile.name;
+    var medi = req.body.medi;
 
+      // Use the mv() method to place the file somewhere on your server
+    sampleFile.mv(__dirname+'/data/'+filename, function(err) {
+      if (err)
+        return res.status(500).send(err);
+   
+    var options = {
+    mode: 'text',
+    pythonPath: "C:/Users/hp/Anaconda3-2/python.exe",
+    pythonOptions: ['-u'],
+    scriptPath: './',
+    args: []
+  };
+  
+  /*var shell = new PythonShell('msocr_1.py', options);
+  shell.on('message', function (message) {
+  
+      var len = message.length;
+    var fs = require('fs');
+    var obj;
+    fs.readFile('output', 'utf8', function (err, data) {
+    if (err) throw err;
+    obj = JSON.parse(data);
+    console.log((obj));
+    res.render("result", {obj:obj});
+  });
+  
+  });*/
+  
+    });
+  });
 //LOGOUT
 router.get("/logout",function(req,res){
    req.logout(); 
