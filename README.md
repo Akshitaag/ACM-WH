@@ -22,6 +22,18 @@ By bridging the gap between pharmacist with surplus near expiry medicines and a 
 
 ## Have a look!
 ![pic1](pictures/Screenshot_(11).png)
+![pic1](pictures/Screenshot_(12).png)
+![pic1](pictures/Screenshot_(13).png)
+![pic1](pictures/Screenshot_(14).png)
+![pic1](pictures/Screenshot_(15).png)
+![pic1](pictures/Screenshot_(16).png)
+![pic1](pictures/Screenshot_(17).png)
+![pic1](pictures/Screenshot_(18).png)
+![pic1](pictures/Screenshot_(19).png)
+![pic1](pictures/Screenshot_(20).png)
+![pic1](pictures/Screenshot_(21).png)
+
+
 
 ## Run it!
 ```
