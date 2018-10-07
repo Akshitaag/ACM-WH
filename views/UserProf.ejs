@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Krishy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" >
+<style type="text/css">
+body{
+  background-image: url("http://images.all-free-download.com/images/graphiclarge/green_moss_background_198184.jpg");
+  background-size:cover;
+  }
+  .text.container.segment{
+    margin-top: 7em ;
+    border: 2px solid white;
+}
+img{
+  height: 300px;
+  width: 300px;
+}
+#delete{
+    display:inline;
+}
+.huge.header{
+    text-align:center;
+    font-family:georgia;
+    color: purple;
+    font-size: 500em;
+}
+</style>    
+
+</head>
+
+<body >
+   <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><a href="/"><i class="certificate icon"></i>KrishY</a></div>
+                <a href="/<%=id%>/items/new" class="item"  style="float: right">Sell</a>
+               
+                 <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                        
+                         <a href="/logout" class="item"  style="float: right">Logout</a>
+                </ul>
+            </div>
+              </div></div>
+            <h1 style="margin-top: 60px; text-align: center">Welcome <%=user.username%></h1>
+
+ <div class="ui main text container segment" style=" background-color: rgb(255,250,205); ">
+        <div class="ui huge header" style="color: green">Medicines on sale</div>
+        <div class="ui top attached ">
+                <div class="ui divided items">
+                    <% items.forEach(function(item){ %>
+                    <div class="item">
+                        
+                         <img src="<%= item.image%>">
+                         <div style="display: inline; margin-left: 20px; margin-top: 10px">
+                           <p>Name: <%= item.name %></p>
+                           <p  style="font-weight: 2.5em">Expiry Date <%= item.expiryDate %> </p>
+              <p style="font-weight: 2.5em">Cost: Rs. <%= item.cost %></p>
+              <a href="#" class="ui button blue inverted">EDIT POST</a>
+              <a href="#" class="ui button red inverted" style="display: inline">DELETE POST</a>
+                         </div>
+                        
+                    </div>
+ 
+        
+        <hr/>
+        <%});%>
+                
+            </div>
+        </div>
+        
+        </div>
+        <% include partials/footer%>

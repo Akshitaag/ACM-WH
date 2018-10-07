@@ -1,0 +1,26 @@
+<% include partials2/header%>
+    <div class= "ui main container segment">
+        <div class ="ui huge header">Edit item</div>
+        <form  class= "ui fluid form" action="/<%=id%>/items" method="POST">
+                     <div class="field">
+                <label>Name</label>
+            <input type="text" value="<%= item.name%>" name="item[name]">
+            </div>
+            <div class="field">
+                 <label>Expiry Date</label>
+                <textarea name="item[expiryDate]" value="<%= item.expiryDate%>" ></textarea>
+            </div>
+            <div class="field">
+                 <label>Image url</label>
+                <input type="text" value="<%= item.image%>" name="item[image]">
+            </div>
+            <label>Cost</label>
+                <input type="text" value="<%= item.cost%>" name="item[cost]">
+            </div>
+           
+            <div class="field"> <input class="button ui primary" type="submit">
+            </div>
+           
+        </form>
+    </div>
+<% include partials/footer%>
