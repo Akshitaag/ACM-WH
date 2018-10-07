@@ -12,11 +12,11 @@ var passport=require("passport");
 
 
 router.get("/register",function(req,res){
-    res.render("register.ejs");
+    res.sendFile("C:/Users/hp/Desktop/Expiry/public/register.html");
 });
 
 router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username});
+    var newUser = new User({username: req.body.username,latitude: req.body.latitude, longitude: req.body.longitude});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
         //    req.flash("error",err.message);

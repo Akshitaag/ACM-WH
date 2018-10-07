@@ -10,7 +10,14 @@ var userSchema= new mongoose.Schema({
    
      password: {
         type: String
+    },
+    latitude : {
+    	type: String
+    },
+    longitude : {
+    	type: String
     }
+
 });
 userSchema.plugin(passportLocalMongoose)
 module.exports= mongoose.model("User",userSchema);
