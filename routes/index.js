@@ -194,7 +194,7 @@ router.post('/upload', function(req, res) {
     var str = message;
     if(str.search(medi)==-1)
     {
-          JSAlert.alert('This medicine is not in your prescription')
+          res.render("failure");
     }
     else
     {
@@ -206,7 +206,7 @@ router.post('/upload', function(req, res) {
         console.log(str.substring(start+8, start+10)); 
        if((10-parseInt(str))>2)
        {
-        JSAlert.alert('Your prescription is too old.');
+        res.send('Your prescription is too old.');
        }
        else
        {
