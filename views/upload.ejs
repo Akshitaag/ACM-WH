@@ -1,7 +1,7 @@
-<% include partials/header%>
+<% include partials/header1%>
 
-<div style="width: 300px; " class= "ui main container segment">
-   <div class ="ui huge header">Admission Classifier</div>
+<div style="width: 300px; margin-top: 10%" class= "ui main container segment">
+   <div class ="ui huge header">Upload Prescription</div>
 <form class= "ui fluid form"  ref='uploadForm' 
   id='uploadForm' 
   action='http://localhost:3000/upload' 
@@ -18,6 +18,10 @@
      </div>
      <label class="field">
        Medicine: <input id="medicine" type="text" name="medicine" value="<%=medi%>">
+
+       </label>
+        <label class="field"  style="display:none;">
+       Medicine: <input id="id" type="text" name="id" value="<%=iid%>" >
 
        </label>
    

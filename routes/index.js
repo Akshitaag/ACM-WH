@@ -5,9 +5,10 @@ var User=require("../models/user.js");
 var passport=require("passport");
 var Item=require("../models/item.js");
 fileUpload = require('express-fileupload');
-var PythonShell = require('python-shell'),
+const {PythonShell} = require("python-shell");
+var JSAlert = require("js-alert");
 sys = require('sys');
-app.use(fileUpload());
+router.use(fileUpload());
 
 
 //AUTH ROUTES
@@ -16,8 +17,8 @@ app.use(fileUpload());
 
 
 router.get("/register",function(req,res){
-    res.sendFile("/home/rahmeen/Desktop/ACM-WH/public/register.html");
-   // res.sendFile("C:/Users/hp/Desktop/Expiry/public/register.html");
+    //res.sendFile("/home/rahmeen/Desktop/ACM-WH/public/register.html");
+    res.sendFile("C:/Users/hp/ACM-WH/public/register.html");
 });
 
 router.post("/register", function(req, res){
@@ -138,8 +139,8 @@ router.post("/:sid/items", function(req, res){
 });
 
 router.get("/:id/buy",function(req,res){
-    res.sendFile("/home/rahmeen/Desktop/ACM-WH/public/sellform.html");
-   // res.sendFile("C:/Users/hp/Desktop/Expiry/public/sellform.html");
+   // res.sendFile("/home/rahmeen/Desktop/ACM-WH/public/sellform.html");
+    res.sendFile("C:/Users/hp/ACM-WH/public/sellform.html");
 });
  router.post("/sellform", function(req, res){
    var byCost = [],
@@ -155,7 +156,7 @@ router.get("/:id/buy",function(req,res){
                 if(err)
                 console.log(err);
                 else {
-                console.log(docs);
+               // console.log(docs);
                     byDate = docs;
                     res.render("sorted", {byCost : byCost, byDate:byDate});
                 }        
@@ -164,46 +165,69 @@ router.get("/:id/buy",function(req,res){
         });
     });
 router.get("/:sid/:iid/:medi/upload", function(req, res){
-    res.render("upload", {medi : medi})
+    res.render("upload", {medi : req.params.medi,iid:req.params.iid})
 });
 router.post('/upload', function(req, res) {
     if (!req.files)
       return res.status(400).send('No files were uploaded.');
-    console.log('body'+req.body);
+   // console.log('body'+req.body);
     let sampleFile = req.files.sampleFile;
     var filename = req.files.sampleFile.name;
-    var medi = req.body.medi;
+    var id = req.body.id;
+    var medi=req.body.medicine;
 
       // Use the mv() method to place the file somewhere on your server
-    sampleFile.mv(__dirname+'/data/'+filename, function(err) {
-      if (err)
-        return res.status(500).send(err);
+    
    
     var options = {
     mode: 'text',
-    pythonPath: "C:/Users/hp/Anaconda3-2/python.exe",
+    pythonPath: "C:/Users/hp/Anaconda3/python",
     pythonOptions: ['-u'],
-    scriptPath: './',
+    scriptPath: 'C:/Users/hp/ACM-WH',
     args: []
   };
-  
-  /*var shell = new PythonShell('msocr_1.py', options);
+
+  var j = 0;
+  var shell = new PythonShell('msocr_1.py', options);
   shell.on('message', function (message) {
+   // console.log(message);
+    var str = message;
+    if(str.search(medi)==-1)
+    {
+          JSAlert.alert('This medicine is not in your prescription')
+    }
+    else
+    {
+      if(str.search("DATE:")!=-1)
+      {
+        var start = str.search("DATE:");
+        var end = 0;
+        for(var i = start+5; str[i] != ' '; i++);
+        console.log(str.substring(start+8, start+10)); 
+       if((10-parseInt(str))>2)
+       {
+        JSAlert.alert('Your prescription is too old.');
+       }
+       else
+       {
+         Item.findById(id, function(err, items){
+               console.log(items);
+     if(err)
+     {
+         console.log(err);
+     }
+     else
+     {
+        res.render("receipt",{item:items});
+      }
+       });
+      }
+      
+    }
+    
   
-      var len = message.length;
-    var fs = require('fs');
-    var obj;
-    fs.readFile('output', 'utf8', function (err, data) {
-    if (err) throw err;
-    obj = JSON.parse(data);
-    console.log((obj));
-    res.render("result", {obj:obj});
-  });
-  
-  });*/
-  
-    });
-  });
+  };
+ }); });
 //LOGOUT
 router.get("/logout",function(req,res){
    req.logout(); 

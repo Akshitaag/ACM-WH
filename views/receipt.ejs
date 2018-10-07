@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Raahat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" >
+<style type="text/css">
+body{
+  background-image: url("http://jacobswellappeal.org/wp-content/uploads/2014/11/donate-medicines.jpgs");
+  background-size:cover;
+  }
+  .text.container.segment{
+    margin-top: 7em ;
+    border: 2px solid white;
+}
+img{
+  height: 300px;
+  width: 300px;
+}
+#delete{
+    display:inline;
+}
+.huge.header{
+    text-align:center;
+    font-family:georgia;
+    color: purple;
+    font-size: 500em;
+}
+</style>    
+
+</head>
+
+<body >
+   <div class="ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><a href="/"><i class="certificate icon"></i>Raahat</a></div>
+               
+                 <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                        
+                         <a href="/logout" class="item"  style="float: right">Logout</a>
+                </ul>
+            </div>
+              </div></div>
+              <div class="ui container">
+                 <h3 style="margin-top: 60px; text-align: left">Your prescription is valid and has <%=item.name%></h3>
+            <h4 style="font-weight: 2.5em">The concerned dealer <%=item.username.username%> has marked the price down to Rs. <%= item.cost %></h4>
+            <h4>Please carry this receipt alongwith!</h4>
+              </div>
+           
+
+        <% include partials/footer%>
