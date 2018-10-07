@@ -1,35 +1,24 @@
-# Krishy
+# ACM-WH 2018
 ## Problem:
-An in-person visit to a nearby sub-urban farming area in Delhi brought to foreground the following problems of a humble, mundane framer: 
-- Laborer deficit (hard to find laborers) 
-- Foul agricultural malpractices of fellow-farmers that need reporting 
-- Crop yield uncertainty
-- Price disparity on both buying(of seeds) and selling(of crops) ends 
-- Lack of awareness of new developments in agriculture
-- Price disparity on both buying(of seeds) and selling(of crops) ends
+Many patients do not have access to medications and on the other hand drugs often expire at healthcare provider facilities, resulting in wasted medication. Our inspiration stems from a desire to combat this problem at a feasible level.
 
 ## Solution we offer:
-We offer a web-based solution that tries to tackle each of these problems in a near efficient way. We intend to revolutionize agriculture in our own little attempt. We hope to build an interactive portal where buyers and sellers can communicate to ensure most profitable business, where malpractice (like irrigation with sewage water, injecting crops with chemicals for quick yield) can be reported , where laborers get easy employment opportunities (one farmer directing laborers to another farm where they're needed while paying them off ) and where farmers get all relevant information related to crops and agriculture. This will impact farmers to make them more aware, informed, independent. The laborers will find quick employment; people will have better quality food and the government will be geared into action. The country’s farming front (crucial to its economy) will be strengthened and change will be made.
+Our project aims to redistribute unopened and near expiry medications at lower prices to patients that belong to lower socio economic background
 
 ## Tech Stack :
-- We plan to use Node.js 
-- Mongo DB(for data persistence) on cloud,i.e., mlab 
-- Socket.IO (for communication channel)
-- Python(for Machine Learning and data science).
-- Tensorflow for Neural Network
-- Frontend : HTML ,CSS , Javascript
+* MongoDB for Data Persistence
+* NodeJS for web framework
+* HTML for structuring data
+* CSS and JS for client side UI changes
+* Express, node framework
+* Python for Image recognition
 
 ## Features :
-- *BUYER'S PORTAL* Enable farmers to get seeds and fertilizers at minimum possible prices by cost comparison. Provide a list of nearby markets along with delivery options. Enable nearby markets to buy the produce of farmers online. 
-- *SELLER'S PORTAL*: Enable agricultural dealers to put up their products (seeds fertilizers, machinery) online . Also enables farmers to put up their produce online. A channel for buyer and seller to communicate directly. 
-- *REPORT*: A lot of malicious activities are happening in agriculture domains that go unnoticed. Enables the reporting of such activities anonymously. Example: Irrigation of fields using sewage water, overuse of harmful chemicals in farming. 
-- *LABORER EMPOWERMENT*: The farms that need laborers will be marked red which will be visible to logged in users. Once the work of a laborer on a farm is complete, they can inquire about new work locations from his current employer in case the laborer doesn't have a smartphone and active internet 
-- *CROP SUITABILITY*: Provides information to farmers on whether the weather conditions are suitable for him to grow a particular crop. If not ,it also gives suggestions regarding the crops that suit the conditions. 
-- *MISCELLANEOUS*: Provides latest news and other relevant information to farmers which will enable them increase their productivity. Empowers farmers with the invaluable gift of 'awareness'
-
-## Building the idea after the campaign:
-We intend to bring our idea into everyday use for farmers to ease their lives. We aim to campaign and create awareness among farmers so that they can easily use our application.
-
+A pharmacist with near expiry medicines can list them on our web application. Anybody who requires a medicine can look it up on our web app and make a selection after which he will be required to upload the prescription which will be automatically authenticated.
+By bridging the gap between pharmacist with surplus near expiry medicines and a patient in need of them this app will have a 3 fold impact-
+- Reducing/eliminating wastage of medicines which get expired and thus revenue
+- Providing low cost medicines to someone who needs them
+- Reducing environmental degradation which would have occurred due to disposal of expired drugs
 
 ```
 clone this repo
