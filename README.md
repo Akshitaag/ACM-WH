@@ -20,6 +20,10 @@ By bridging the gap between pharmacist with surplus near expiry medicines and a 
 - Providing low cost medicines to someone who needs them
 - Reducing environmental degradation which would have occurred due to disposal of expired drugs
 
+## Have a look!
+![pic1]("pictures/Screenshot (11)")
+
+## Run it!
 ```
 clone this repo
 cd into it
