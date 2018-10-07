@@ -21,7 +21,7 @@ By bridging the gap between pharmacist with surplus near expiry medicines and a 
 - Reducing environmental degradation which would have occurred due to disposal of expired drugs
 
 ## Have a look!
-![pic1]("pictures/Screenshot (11)")
+!["pic1"]("pictures/Screenshot_(11)")
 
 ## Run it!
 ```
