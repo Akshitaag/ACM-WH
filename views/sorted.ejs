@@ -59,6 +59,8 @@ img{
                            <p>Name: <%= item.name %></p>
                            <p  style="font-weight: 2.5em">Expiry Date <%= item.expiryDate %> </p>
               <p style="font-weight: 2.5em">Cost: Rs. <%= item.cost %></p>
+
+              <p style="font-weight: 2.5em">Sold by: <%= item.username.username %></p>
              
               <a href="/<%=item.username.id%>/<%=item._id%>/<%=item.name%>/upload" class="ui button red inverted" style="display: inline">BUY ME</a>
                          </div>
